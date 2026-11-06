@@ -1,0 +1,42 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- Virtual environments ----
+venv/
+.venv/
+env/
+.env
+.env.*
+*.env
+
+# ---- Secrets / credentials ----
+.streamlit/secrets.toml
+*.pem
+*.key
+aws.json
+credentials
+.aws/
+
+# ---- Notebooks ----
+.ipynb_checkpoints/
+
+# ---- Testing / tooling ----
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# ---- Agent runtime state (personal data - never publish) ----
+.memory/
+.logs/

@@ -1,0 +1,22 @@
+# Market Intelligence Agent - Dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+streamlit>=1.35.0
+boto3>=1.34.0
+
+# Market Data
+yfinance>=0.2.40
+
+# Charts
+plotly>=5.18.0
+
+# PDF Report Generation
+fpdf2>=2.7.0
+
+# HTTP / Parsing
+requests>=2.31.0
+
+# Utilities
+python-dateutil>=2.8.2
+pytz>=2023.3

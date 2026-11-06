@@ -1,0 +1,187 @@
+<mxfile host="app.diagrams.net" modified="2026-06-30T00:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram name="Market Intelligence Agent" id="market-intel-arch">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- AWS Cloud Boundary -->
+        <mxCell id="aws-cloud" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;stroke=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="520" height="380" as="geometry" />
+        </mxCell>
+        
+        <!-- Region -->
+        <mxCell id="region" value="us-east-1 (N. Virginia)" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;stroke=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="120" width="480" height="320" as="geometry" />
+        </mxCell>
+        
+        <!-- Amazon Bedrock -->
+        <mxCell id="bedrock" value="Amazon Bedrock&#xa;(Nova Pro / Nova Lite)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#01A88D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;" vertex="1" parent="1">
+          <mxGeometry x="660" y="180" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Bedrock Agent / Converse API label -->
+        <mxCell id="converse-label" value="Converse API&#xa;+ tool_use protocol" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="640" y="245" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- User -->
+        <mxCell id="user" value="User / Broker" style="shape=mxgraph.aws4.users;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="50" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Streamlit UI -->
+        <mxCell id="streamlit" value="Streamlit UI&#xa;(Chat, Charts,&#xa;Portfolio, Stats)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;" vertex="1" parent="1">
+          <mxGeometry x="220" y="250" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow: User to Streamlit -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="user" target="streamlit" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1-label" value="natural language&#xa;query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow1">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        
+        <!-- ReAct Agent Box -->
+        <mxCell id="agent-box" value="MarketIntelligenceAgent&#xa;(ReAct Loop — max 8 iterations)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2FF;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;verticalAlign=top;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="350" y="160" width="110" height="280" as="geometry" />
+        </mxCell>
+        
+        <!-- Tool Definitions -->
+        <mxCell id="tools-def" value="7 Tool&#xa;Definitions&#xa;(JSON Schemas)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#FFF2CC;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="365" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- LLM Decides -->
+        <mxCell id="llm-decides" value="LLM Decides&#xa;Tools" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="290" width="90" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: Streamlit to Agent -->
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" source="streamlit" target="agent-box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2-label" value="user message" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow2">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint y="-12" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Arrow: Agent to Bedrock -->
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;" edge="1" source="agent-box" target="bedrock" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3-label" value="boto3 converse()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow3">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint y="-12" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Tools Group -->
+        <mxCell id="tools-group" value="Data Tools (executed locally)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=10;fontStyle=1;verticalAlign=top;spacingTop=5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="900" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Stock Price Tool -->
+        <mxCell id="tool1" value="📈 get_stock_price&#xa;(yfinance)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Stock History Tool -->
+        <mxCell id="tool2" value="📊 get_stock_history&#xa;(yfinance)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="200" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Sector Overview Tool -->
+        <mxCell id="tool3" value="🏭 get_sector_overview&#xa;(yfinance — 7 sectors)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="320" y="540" width="120" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Compare Stocks Tool -->
+        <mxCell id="tool4" value="⚖️ compare_stocks&#xa;(max 6)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="450" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- News Search Tool -->
+        <mxCell id="tool5" value="📰 search_financial_news&#xa;(Google News RSS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="570" y="540" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Company News Tool -->
+        <mxCell id="tool6" value="🏢 get_company_news&#xa;(yfinance + RSS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="710" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Market Headlines Tool -->
+        <mxCell id="tool7" value="📋 get_market_headlines&#xa;(Google News RSS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="830" y="540" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: Agent to Tools -->
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" edge="1" source="agent-box" target="tools-group" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4-label" value="tool execution&#xa;(LLM picks autonomously)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow4">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint x="20" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Memory -->
+        <mxCell id="memory" value="Local Memory&#xa;(.memory/ JSON)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="140" width="100" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Memory sub-labels -->
+        <mxCell id="mem-label" value="• Broker Profiles&#xa;• Conversation History" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="210" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: Memory to Agent -->
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;dashed=1;" edge="1" source="memory" target="agent-box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5-label" value="personalization +&#xa;multi-turn context" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow5">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint y="-12" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Observability -->
+        <mxCell id="logs" value="Observability&#xa;(.logs/agent_runs.jsonl)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=0.15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: Bedrock to Logs -->
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;" edge="1" source="bedrock" target="logs" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6-label" value="every run logged" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#666666;" vertex="1" connectable="0" parent="arrow6">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint y="-10" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Final Analysis arrow back -->
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=0.7;entryX=1;entryY=0.7;strokeColor=#009900;" edge="1" source="bedrock" target="streamlit" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="380" />
+              <mxPoint x="300" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow7-label" value="final analysis&#xa;(personalized markdown)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#009900;" vertex="1" connectable="0" parent="arrow7">
+          <mxGeometry x="-0.3" relative="1" as="geometry"><mxPoint y="12" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Data Sources label -->
+        <mxCell id="datasources" value="External Data Sources: Yahoo Finance (yfinance) + Google News RSS — Free, No API Keys" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="250" y="640" width="480" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="title" value="Market Intelligence Agent — Architecture Diagram" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="330" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Subtitle -->
+        <mxCell id="subtitle" value="Agentic AI • ReAct Pattern • Amazon Bedrock • Quadra Systems 2026" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="350" y="55" width="350" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
